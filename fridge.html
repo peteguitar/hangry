@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+<meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS bootstrap -->
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+
+    .panel-body{
+      width: 100%;
+    }
+
+    .sub-container {
+     
+     float: left;
+     width: 50%;
+     
+    }
+
+    #googleMap {
+     
+       width: 100%;
+       height: 300px;
+    }
+    </style>
+    <!--title-->
+<title>Hangry</title>
+</head>
+<body>
+<div class="logo1">
+<img src="assets/images/hangry-pic2.png">
+</div>
+<!---heading-->
+<h2>Find Your food!</h2>
+<br>
+<br>
+<!---search area for stores-->
+<div class="sub-container">
+<div class="store">
+  <div class="panel panel-danger">
+  <div id="store" class="panel-heading">Stores near you!</div>
+  <div class="panel-body">
+<div id="googleMap"></div>
+   <form role="form">
+      <div class="form-group2">
+               <label for="findstore-input"></label>
+               <input class="form-control" placeholder="Zip Code" id="findstore-input" type="text">
+               <button id="go" class="btn btn-danger" id="add-user" type="submit">Go</button></div>
+        </form>
+</div> 
+</div>
+<!---buttons for user input or return to home screen-->
+ <button id="button3" class="btn btn-default"> <a href="index.html">Home</a></button>
+<!---buttons for user input or return to home screen-->
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3etCHkIc4jlvBMEzls5Tf7wybDYg8Q2M&libraries=places"></script>
+  <script>
+     var map;
+     var infowindow;
+     var service;
+      
+
+     var request;
+     var markers = [];
+
+     function initialize() {
+    var center = new google.maps.LatLng(28.4810971,-81.5088359);
+        map = new google.maps.Map(document.getElementById('googleMap'), {
+          center: center,
+          zoom: 11,
+
+      });
+
+  // Specify location, radius and place types for your Places API search.
+      request = {
+          location: center,
+          radius: 8047,
+          types: ['grocery_or_supermarket']
+      };
+        infowindow = new google.maps.InfoWindow();
+      
+        service = new google.maps.places.PlacesService(map);
+
+        service.nearbySearch(request, callback);
+
+      google.maps.event.addListener(map, 'rightclick', function(event){
+        map.setCenter(event.latlng)
+        clearResults(markers)
+
+        var request = {
+          location: event.latlng,
+          radius: 8047,
+          types: ['grocery_or_supermarket']
+
+      }
+        service.nearbySearch(request, callback);
+      });
+
+}
+    function callback(results, status) {
+            if(status == google.maps.places.PlacesServiceStatus.OK){
+                for (var i = 0; i < results.length; i++) {
+                    markers.push(createMarker(results[i]));
+                }
+            }
+        } 
+
+   function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name);
+              infowindow.open(map, this);
+            });
+
+            return marker;
+
+           function clearResutls(markers) {
+            for (var m in markers) {
+              markers [m].setMap(null)
+            }
+            markers =[]
+           }
+}﻿
+// Run the initialize function when the window has finished loading.
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+</html>

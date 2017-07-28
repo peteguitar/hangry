@@ -1,0 +1,40 @@
+Refine API Research
+
+Create an initial draft / sketch of the final design
+
+
+
+Create a short 1 page proposal listing out each of the following:
+
+
+
+Project Title
+
+ - "Hangry"
+
+Team Members - Frank, Me, Josie, Andew
+
+
+
+Project Description
+
+ - 
+
+Sketch of Final Product
+
+
+
+APIs to be Used
+
+
+
+Rough Breakdown of Tasks
+
+
+
+Project managers will slack the github link containing this information to the open-forum channel with @kc135q in the message.
+
+write the story of the app
+
+
+bite marks on logo 

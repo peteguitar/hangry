@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="assets/css/reset.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+   <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<title>Hangry</title>
+</head>
+<body>
+
+<div class="main-container">
+<div class="logo1">
+<img src="assets/images/hangry-pic2.png">
+</div>
+<!--heading-->
+<h2> What's in your fridge?</h2>
+<!---buttons for home screen-->
+<div class="buttons">
+
+<div class="btn-group btn-group-justified" role="group" aria-label="">
+
+ <div class="btn-group" role="group">
+   <button id="button1" type="button" class="btn btn-default"><a href="index.html">Home</a>
+ </div>
+
+ <div class="btn-group" role="group">
+   <button id="button2" type="button" class="btn btn-danger"> <a href="fridge.html">
+    Store Near You</a></button>
+ </div>
+</div>
+</div>
+
+
+<div class="sub-container">
+<form>
+     <span id="todo-item"><input id="to-do" type="text"><input id="add-to-do" type="submit"></span>
+</form>
+</div>
+
+   <hr>
+
+   <!-- To-Do List -->
+   <div id="to-dos"></div><br>
+   <div id="recipeBook1"></div><br>
+   <div id="recipeBook2"></div>
+   <div id="recipeBook3"></div>
+     
+</div>      
+</div>
+
+<script src="assets/javascript/hangry.js"></script>
+
+</body>
+</html>

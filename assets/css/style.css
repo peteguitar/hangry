@@ -1,0 +1,118 @@
+body {
+
+
+  font-family: 'Finger Paint', cursive;
+	background: url("../images/food_and_board.jpg"); 
+  
+   
+  }
+
+
+
+
+h1 {
+  position:  relative;
+	top: 20px;
+	font-size: 100px;
+	left: 100px;
+  color: white;
+}
+
+.logo{
+	top: 50px;
+  position: relative;
+  left: 180px;
+  
+  
+}
+
+.logo1 {
+	
+  float: right;
+
+}
+	
+
+h2 {
+ font-size: 30px;
+ position: relative;
+ left: 50px;
+  text-align: center;
+  padding-top: 30px;
+
+}
+
+
+a {
+
+font:10px; color:white;
+
+}
+
+#store{
+
+  background: firebrick;
+  color: black;
+  text-align: center;
+}
+
+.panel-body {
+  background: black;
+
+}
+
+#button3 {
+  color: white;
+  background: black;
+  position: relative;
+ 
+}
+
+#go {
+  color:black;
+  background: firebrick;
+  position: relative;
+}
+
+.user-input {
+
+  width: 60%;
+  left: 200px;
+}
+
+#add-user{
+
+  width: 30%;
+  left: 300px;
+}
+
+#button1 {
+  top:  20px;
+  width: 30%;
+    border: 10px;
+    background: black;
+    border-radius: 10px;
+}
+
+
+
+#button2 {
+  top:  20px;
+    width: 40%;
+    font:10px; color: black;
+    border: 10px;
+    background: firebrick;
+    border-radius: 10px;
+}
+
+.sub-container {
+
+  position: relative;
+  height: 100px;
+}
+
+#to-do{
+  position: relative;
+  margin: 40px;
+
+}
